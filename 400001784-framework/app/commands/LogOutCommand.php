@@ -3,7 +3,7 @@
 	class LogOutCommand extends Command
 	{
 		function __construct() {
-			$this->controller = new AboutUsController();
+			$this->controller = new LogOutController();
 		}
 
 		public function execute(CommandContext $context):void {

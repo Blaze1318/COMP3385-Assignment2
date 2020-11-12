@@ -21,7 +21,7 @@
 		<h2>Enrolled Courses</h2>
 		<ul class="course-list">
 			<?php
-				foreach($this->obsData[0] as $record)
+				foreach($mycourses as $record)
 				{
 					echo '<li><div>
 						<a href="#"><img src="images/' .$record["course_image"] .'"alt="course image"></a>

@@ -14,6 +14,7 @@ class IndexController extends Controller
         $this->responseHandler->getState()->setData("State", "Normal");
         $this->responseHandler->getLogResponse()->setData("Logger", "Index page was visted");
         $this->sessionManager->create();
+        $this->sessionManager->remove("LoggedIn");
         $this->sessionManager->add("Response Handler", $this->responseHandler);
 		$this->getView()->display();
 		

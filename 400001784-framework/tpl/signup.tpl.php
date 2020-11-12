@@ -29,7 +29,7 @@
 					}
 				}
 			?>
-        <form action="index.php?controller=SignUp" method="post">
+        <form action="index.php?controller=SignUp" method="POST">
           <div class="form-group has-feedback">
             <input type="text" class="form-control" name="formFullName" placeholder="Full name"/>
           </div>

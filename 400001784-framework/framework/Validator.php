@@ -2,6 +2,15 @@
     class Validator
     {
         private static $instance = null;
+
+        public function isNameValid($name):bool
+        {
+            if($name != null && $name != '')
+            {
+                return true;
+            }
+            return false;
+        }
         public function validEmail($email):bool
         {
             if(!filter_var($email,FILTER_VALIDATE_EMAIL))

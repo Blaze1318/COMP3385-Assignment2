@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<nav>
-			<a href="#"><img src="images/logo.png" alt="UWI online"></a>
+			<!--<a href="#"><img src="images/logo.png" alt="UWI online"></a> -->
 			<ul>
 				<li><a href="index.php?controller=Courses">Courses</a></li>
 				<li><a href="index.php?controller=Streams">Streams</a></li>

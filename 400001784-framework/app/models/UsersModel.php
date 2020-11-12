@@ -1,53 +1,38 @@
 <?php
    class UsersModel extends Model
    {
-        public function getAll(): array
+     use ModelMethods;
+
+        public function makeConnection():void
         {
-            $data = file_get_contents($this->absolutePath . "/" ."/data/users.json");
-            return json_decode($data,true);
+            $dbconnect = new DatabaseConnect();
+            $this->databaseConnection = $dbconnect->createConnection();
+        }
+        public function findAll(): array
+        {
+            $stmt = $this->databaseConnection->prepare("SELECT * FROM users");
+            $stmt->execute();
+            $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            return $stmt->fetchAll();
         }
 
-        public function getRecord(string $id):array
+        public function findRecord(string $id):array
         {
-            $data = file_get_contents($this->absolutePath . "/" ."data/users.json");
-            $jsondata = json_decode($data,true);
-
-            foreach ($jsondata as $key) {
-                if ($key["email"] == $id) {
-                    return $key;
-                }
-            }
-            return [];
+            $stmt = $this->databaseConnection->prepare("SELECT * FROM users WHERE email ='".$id."'");
+            $stmt->execute();
+            $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            //var_dump($stmt->fetch());
+            return $stmt->fetchAll();
         }
 
-        public function update(array $newUser):void{
-            $users = $this->getAll();
-            array_push($users, $newUser);
-            file_put_contents($this->absolutePath . "/" . "data/users.json", json_encode($users));
-        }
-
-        public function getUserCourses():array
+        public function registerUsers($name,$email,$password):void
         {
-            $data = file_get_contents($this->absolutePath . "/" ."/data/user_courses.json");
-            return json_decode($data,true);
-        }
-        
-        public function getCourses():array
-        {
-            $courseModel = new CoursesModel();
-            $mycourses = $courseModel->getAllCourses();
-            $userCourses = $this->getUserCourses();
-            $getRegisterCourses = array();
-
-            for ($i=0; $i < sizeof($mycourses); $i++) { 
-                for ($j=0; $j < sizeof($userCourses); $j++) { 
-                    if ($mycourses[$i]["course_id"] == $userCourses[$j]["course_id"] && $userCourses[$j]["email"] == $_SESSION["LoggedIn"]) {
-                        array_push($getRegisterCourses, $mycourses[$i]);
-                    }
-                }
-            }
-
-            return $getRegisterCourses;
+          echo strlen($password);
+              $this->databaseConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+              $sql = "INSERT INTO users (name,email,password)
+              VALUES ('".$name."', '".$email."', '".$password."')";
+              $stmt = $this->databaseConnection->prepare($sql);
+              $stmt->execute();
         }
     }
 ?>

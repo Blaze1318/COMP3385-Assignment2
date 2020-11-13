@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2020 at 06:18 PM
+-- Generation Time: Nov 13, 2020 at 09:09 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -275,6 +275,16 @@ CREATE TABLE `user_courses` (
   `email` varchar(100) NOT NULL,
   `course_id` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user_courses`
+--
+
+INSERT INTO `user_courses` (`email`, `course_id`) VALUES
+('sam@gmail.com', 1),
+('sam@gmail.com', 15),
+('tester@comp3170.com', 2),
+('tester@comp3170.com', 3);
 
 --
 -- Indexes for dumped tables

@@ -3,6 +3,11 @@
     {
         public function run():void
         {
+            $this->sessionManager->create();
+            if(isset($_SESSION["LoggedIn"]) && !$this->sessionManager->accessible($_SESSION["LoggedIn"],"login.php"))
+            {
+                header("Location:index.php?controller=Profile");
+            }
            
             if($_SERVER["REQUEST_METHOD"] == "GET")
             {

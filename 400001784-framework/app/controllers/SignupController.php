@@ -3,6 +3,13 @@
     {
         public function run():void
         {
+            $this->sessionManager->create();
+
+
+            if(isset($_SESSION["LoggedIn"]) && !$this->sessionManager->accessible($_SESSION["LoggedIn"],"signup.php"))
+            {
+                header("Location:index.php?controller=Profile");
+            }
             if($_SERVER["REQUEST_METHOD"] == "POST")
             {
                 $fullname = $this->commandContext->get("formFullName");

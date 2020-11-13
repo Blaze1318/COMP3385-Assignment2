@@ -12,8 +12,8 @@
 				<li><a href="index.php?controller=Courses">Courses</a></li>
 				<li><a href="index.php?controller=Streams">Streams</a></li>
 				<li><a href="index.php?controller=AboutUs">About Us</a></li>
-				<li><a href="index.php?controller=LogOut">Log Out</a></li>
 			    <li><a href="index.php?controller=Profile">Profile</a></li>
+			    <li><a href="index.php?controller=LogOut">Log Out</a></li>
 			</ul>
 		</nav>
 		<main>

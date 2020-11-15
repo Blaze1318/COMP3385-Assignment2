@@ -1,8 +1,8 @@
 <?php
+use Framework\Model;
+use Framework\SessionClass;
    class UsersModel extends Model
    {
-     use ModelMethods;
-
         public function makeConnection():void
         {
             $dbconnect = new DatabaseConnect();

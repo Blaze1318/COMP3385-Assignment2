@@ -1,5 +1,6 @@
 <?php  
- 
+use Framework\Controller;
+use Framework\View;
 class CoursesController extends Controller
 { 
 	public function run():void
@@ -7,7 +8,7 @@ class CoursesController extends Controller
 		$this->sessionManager->create();
 		if(isset($_SESSION["LoggedIn"]))
        {
-            if(SessionClass::accessible($_SESSION["LoggedIn"],"courses.php"))
+            if($this->sessionManager->accessible($_SESSION["LoggedIn"],"courses.php"))
             {
                 	$this->setModel(new CoursesModel());
 					        $this->setView(new View);

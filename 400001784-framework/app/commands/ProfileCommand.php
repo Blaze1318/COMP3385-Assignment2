@@ -1,5 +1,6 @@
 <?php
-	
+use Framework\Command;
+use Framework\CommandContext;
 	class ProfileCommand extends Command
 	{
 		function __construct() {

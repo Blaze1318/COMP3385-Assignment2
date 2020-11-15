@@ -1,4 +1,5 @@
 <?php
+namespace Framework;
     trait ModelMethods{
 
         abstract public function makeConnection():void;

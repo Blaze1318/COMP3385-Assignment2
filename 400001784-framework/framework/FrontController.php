@@ -1,5 +1,5 @@
 <?php
-
+namespace Framework;
 	class FrontController {
 		private $requestHandler;
 

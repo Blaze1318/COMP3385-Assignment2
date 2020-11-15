@@ -1,5 +1,5 @@
 <?php
- 
+ namespace Framework;
 abstract class Controller
 {
 	protected $model = null;

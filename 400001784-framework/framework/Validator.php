@@ -1,4 +1,5 @@
 <?php
+namespace Framework;
     class Validator
     {
         private static $instance = null;

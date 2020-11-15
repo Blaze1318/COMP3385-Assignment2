@@ -1,5 +1,6 @@
 <?php  
- 
+use Framework\Controller;
+use Framework\View;
 class IndexController extends Controller
 { 
 	public function run():void

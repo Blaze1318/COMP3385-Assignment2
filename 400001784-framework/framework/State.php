@@ -1,4 +1,5 @@
 <?php
+namespace Framework;
 	class State {
 		protected $data;
 

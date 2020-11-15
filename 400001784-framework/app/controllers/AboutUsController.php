@@ -1,5 +1,6 @@
 <?php  
- 
+use Framework\Controller;
+use Framework\View;
 class AboutUsController extends Controller
 { 
 	public function run():void

@@ -1,4 +1,5 @@
 <?php
+use Framework\Model;
      class StreamsModel extends Model
      {
          public function makeConnection():void

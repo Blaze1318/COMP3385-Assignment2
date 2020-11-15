@@ -1,21 +1,23 @@
 <?php
     spl_autoload_register(function ($class_name) {
         $absolutepath = __DIR__ . "/";
+        $parts = explode('\\', $class_name);
+        $class = $parts[count($parts)-1];
         $classes = array(
-            $absolutepath ."app/controllers/" . $class_name . ".php",
-             $absolutepath ."app/" . $class_name . ".php",
-            $absolutepath ."app/models/" . $class_name . ".php",
-            $absolutepath ."app/commands/" . $class_name . ".php",
-            $absolutepath ."framework/" . $class_name . ".php",
-            $absolutepath ."config/" . $class_name . ".php",
-            $absolutepath ."tpl/" . $class_name . ".php"
+            $absolutepath ."app/controllers/" . $class. ".php",
+             $absolutepath ."app/" . $class . ".php",
+            $absolutepath ."app/models/" . $class . ".php",
+            $absolutepath ."app/commands/" . $class . ".php",
+            $absolutepath ."framework/" . $class . ".php",
+            $absolutepath ."config/" . $class . ".php",
+            $absolutepath ."tpl/" . $class . ".php"
         );
         foreach($classes as $class)
         {
             if(file_exists($class))
             {
                 
-                require $class;
+                require_once $class;
             } 
         }
     });

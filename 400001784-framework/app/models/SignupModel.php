@@ -1,4 +1,5 @@
 <?php
+use Framework\Model;
      class SignupModel extends Model
      {
           public function getAll(): array

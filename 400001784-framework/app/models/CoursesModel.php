@@ -1,9 +1,7 @@
 <?php 
-
+use Framework\Model;
 class CoursesModel extends Model
 {
-	use ModelMethods;
-
 	public function makeConnection():void
 	{
 		$dbconnect = new DatabaseConnect();

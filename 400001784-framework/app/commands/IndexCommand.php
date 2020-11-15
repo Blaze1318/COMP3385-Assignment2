@@ -1,5 +1,6 @@
 <?php
-	
+use Framework\Command;
+	use Framework\CommandContext;
 	class IndexCommand extends Command
 	{
 		function __construct() {

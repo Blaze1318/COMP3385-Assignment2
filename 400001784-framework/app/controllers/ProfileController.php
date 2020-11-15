@@ -1,4 +1,6 @@
 <?php
+use Framework\Controller;
+use Framework\View;
     class ProfileController extends Controller
     {
         public function run():void

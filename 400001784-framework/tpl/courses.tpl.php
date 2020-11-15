@@ -1,3 +1,6 @@
+<?php
+	use Framework\SessionClass;
+?>
 <!DOCTYPE html>
 <html lang="en-GB">
 	<head>

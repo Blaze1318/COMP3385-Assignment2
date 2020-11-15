@@ -1,5 +1,6 @@
 <?php
-    require "../../400001784-framework/autoloader.php";
+    use Framework\FrontController;
+    require_once "../../400001784-framework/autoloader.php";
   
     $frontController = new FrontController();
  
